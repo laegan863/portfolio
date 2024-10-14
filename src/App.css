@@ -1,38 +1,149 @@
-.App {
-  text-align: center;
+/* App.css */
+.bg-navbar {
+  background-color: #3d5e4c; /* Change the navbar background color */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar-brand {
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  transition: color 0.3s ease-in-out;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.navbar-brand:hover {
+  color: #f8f9fa; /* Change the brand color on hover */
+}
+
+.nav-menu {
+  transition: all 0.5s ease;
+  position: relative;
+}
+
+.nav-menu:hover {
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 5px;
+  font-weight: 700;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-menu::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  background-color: #f8f9fa;
+  bottom: 0;
+  left: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-menu:hover::after {
+  width: 100%;
+}
+
+/* Adjust dropdown menu on hover */
+.navbar-nav .nav-item .nav-link {
+  color: #f8f9fa !important;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+  color: #14143b !important;
+  background-color: #f8f9fa !important;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+/* h1,h2,h3{
+  font-family: 'Times New Roman', Times, serif;
+} */
+
+/* For the container background */
+.background-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Behind other content */
+  overflow: hidden;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(0, 123, 255, 0.3); /* Light blue with transparency */
+  animation: move 10s infinite alternate;
+}
+
+/* Define the animation keyframes */
+@keyframes move {
+  0% {
+      transform: translateY(0px) scale(1);
+      opacity: 0.5;
+  }
+  100% {
+      transform: translateY(-500px) scale(1.5);
+      opacity: 1;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Position some circles at random */
+.circle1 {
+  width: 100px;
+  height: 100px;
+  top: 20%;
+  left: 10%;
+  animation-duration: 8s;
 }
 
-.App-link {
-  color: #61dafb;
+.circle2 {
+  width: 150px;
+  height: 150px;
+  top: 40%;
+  left: 70%;
+  animation-duration: 12s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.circle3 {
+  width: 200px;
+  height: 200px;
+  top: 60%;
+  left: 30%;
+  animation-duration: 15s;
+}
+
+.borderTop {
+
+  border-top: 20px solid #3d5e4c !important;
+  border-left: 0px !important;
+  border-right: 0px !important;
+  border-bottom: 0px !important;
+
+}
+
+.bannerRadius {
+  border-radius: 63% 37% 55% 25% / 33% 25% 62% 46%;
+  animation: adjustRadius 3s infinite ease-in-out;
+}
+
+@keyframes adjustRadius {
+  0% {
+    border-radius: 63% 37% 55% 25% / 33% 25% 62% 46%;
   }
-  to {
-    transform: rotate(360deg);
+  25% {
+    border-radius: 70% 30% 50% 20% / 40% 20% 60% 50%;
+  }
+  50% {
+    border-radius: 55% 45% 60% 30% / 35% 30% 55% 45%;
+  }
+  75% {
+    border-radius: 65% 35% 58% 28% / 30% 35% 65% 55%;
+  }
+  100% {
+    border-radius: 63% 37% 55% 25% / 33% 25% 62% 46%;
   }
 }
+
+
+
+
